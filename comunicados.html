@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Comunicados - Creche Doce</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <h2>Creche Doce</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="cadastro.html">Cadastro</a>
+    <a href="consulta.html">Consulta</a>
+    <a href="rotina.html">Rotina Diária</a>
+    <a href="relatorio.html">Relatórios</a>
+    <a href="comunicados.html">Comunicados</a>
+    <a href="index.html">Sair</a>
+  </aside>
+
+  <main class="content">
+    <h1>Envio de Comunicados</h1>
+    <p>Comunicação com os responsáveis dos alunos.</p>
+
+    <form class="form-box">
+      <label>Destinatário</label>
+      <select>
+        <option>Responsável específico</option>
+        <option>Turma inteira</option>
+        <option>Todos os responsáveis</option>
+      </select>
+
+      <label>Assunto</label>
+      <input type="text" placeholder="Ex: Reunião de pais">
+
+      <label>Mensagem</label>
+      <textarea placeholder="Digite o comunicado..."></textarea>
+
+      <button type="button">Enviar Comunicado</button>
+    </form>
+
+    <section class="box">
+      <h2>Histórico de Comunicados</h2>
+      <ul>
+        <li>Reunião de pais - enviado para Maternal II</li>
+        <li>Aviso de feriado - enviado para todos</li>
+        <li>Solicitação de documentos - enviado para responsável específico</li>
+      </ul>
+    </section>
+  </main>
+
+</body>
+</html>

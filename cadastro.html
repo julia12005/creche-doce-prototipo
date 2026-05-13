@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro de Alunos - Creche Doce</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <h2>Creche Doce</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="cadastro.html">Cadastro</a>
+    <a href="consulta.html">Consulta</a>
+    <a href="rotina.html">Rotina Diária</a>
+    <a href="relatorio.html">Relatórios</a>
+    <a href="comunicados.html">Comunicados</a>
+    <a href="index.html">Sair</a>
+  </aside>
+
+  <main class="content">
+    <h1>Cadastro de Alunos</h1>
+    <p>Registro administrativo de novos alunos da creche.</p>
+
+    <form class="form-box">
+      <label>Nome completo do aluno</label>
+      <input type="text" placeholder="Ex: Maria Eduarda Silva">
+
+      <label>Data de nascimento</label>
+      <input type="date">
+
+      <label>Turma</label>
+      <select>
+        <option>Berçário</option>
+        <option>Maternal I</option>
+        <option>Maternal II</option>
+        <option>Pré-escola</option>
+      </select>
+
+      <label>Nome do responsável</label>
+      <input type="text" placeholder="Ex: Ana Paula Silva">
+
+      <label>CPF do responsável</label>
+      <input type="text" placeholder="000.000.000-00">
+
+      <label>Contato de emergência</label>
+      <input type="tel" placeholder="(61) 99999-9999">
+
+      <label>Anexar documento</label>
+      <input type="file">
+
+      <button type="button">Salvar Cadastro</button>
+    </form>
+  </main>
+
+</body>
+</html>
