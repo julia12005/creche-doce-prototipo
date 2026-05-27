@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Relatório Pedagógico - Creche Doce</title>
+
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
   <aside class="sidebar">
+
     <h2>Creche Doce</h2>
+
     <a href="dashboard.html">Dashboard</a>
     <a href="cadastro.html">Cadastro</a>
     <a href="consulta.html">Consulta</a>
@@ -16,38 +23,92 @@
     <a href="relatorio.html">Relatórios</a>
     <a href="comunicados.html">Comunicados</a>
     <a href="index.html">Sair</a>
+
   </aside>
 
   <main class="content">
-    <h1>Relatório Pedagógico</h1>
-    <p>Acompanhamento do desenvolvimento da criança.</p>
 
-    <form class="form-box">
+    <h1>Relatório Pedagógico</h1>
+
+    <p>
+      Acompanhamento do desenvolvimento da criança.
+    </p>
+
+    <form class="form-box" id="relatorioForm">
+
       <label>Aluno</label>
-      <select>
-        <option>Maria Eduarda Silva</option>
-        <option>João Pedro Santos</option>
-        <option>Lucas Almeida</option>
+
+      <select id="aluno" required>
+
+        <option value="">
+          Selecione um aluno
+        </option>
+
       </select>
 
       <label>Desenvolvimento Cognitivo</label>
-      <textarea></textarea>
+
+      <textarea
+        id="cognitivo"
+        placeholder="Descreva o desenvolvimento cognitivo..."
+        required
+      ></textarea>
 
       <label>Desenvolvimento Motor</label>
-      <textarea></textarea>
+
+      <textarea
+        id="motor"
+        placeholder="Descreva o desenvolvimento motor..."
+        required
+      ></textarea>
 
       <label>Desenvolvimento Emocional</label>
-      <textarea></textarea>
+
+      <textarea
+        id="emocional"
+        placeholder="Descreva o desenvolvimento emocional..."
+        required
+      ></textarea>
 
       <label>Desenvolvimento Social</label>
-      <textarea></textarea>
+
+      <textarea
+        id="social"
+        placeholder="Descreva o desenvolvimento social..."
+        required
+      ></textarea>
 
       <label>Observações Gerais</label>
-      <textarea></textarea>
 
-      <button type="button">Gerar Relatório</button>
+      <textarea
+        id="observacoes"
+        placeholder="Observações adicionais"
+      ></textarea>
+
+      <button type="submit">
+        Gerar Relatório
+      </button>
+
     </form>
+
+    <section class="box">
+
+      <h2>Relatórios Recentes</h2>
+
+      <ul id="listaRelatorios">
+
+        <li>
+          Nenhum relatório gerado.
+        </li>
+
+      </ul>
+
+    </section>
+
   </main>
 
+  <script src="js/relatorio.js"></script>
+
 </body>
+
 </html>

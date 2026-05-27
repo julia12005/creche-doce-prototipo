@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Cadastro de Alunos - Creche Doce</title>
+
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
   <aside class="sidebar">
+
     <h2>Creche Doce</h2>
+
     <a href="dashboard.html">Dashboard</a>
     <a href="cadastro.html">Cadastro</a>
     <a href="consulta.html">Consulta</a>
@@ -16,42 +23,86 @@
     <a href="relatorio.html">Relatórios</a>
     <a href="comunicados.html">Comunicados</a>
     <a href="index.html">Sair</a>
+
   </aside>
 
   <main class="content">
-    <h1>Cadastro de Alunos</h1>
-    <p>Registro administrativo de novos alunos da creche.</p>
 
-    <form class="form-box">
+    <h1>Cadastro de Alunos</h1>
+
+    <p>
+      Registro administrativo de novos alunos da creche.
+    </p>
+
+    <form class="form-box" id="cadastroForm">
+
       <label>Nome completo do aluno</label>
-      <input type="text" placeholder="Ex: Maria Eduarda Silva">
+      <input
+        type="text"
+        id="nomeAluno"
+        placeholder="Ex: Maria Eduarda Silva"
+        required
+      >
 
       <label>Data de nascimento</label>
-      <input type="date">
+      <input
+        type="date"
+        id="dataNascimento"
+        required
+      >
 
       <label>Turma</label>
-      <select>
+      <select id="turma" required>
+
+        <option value="">Selecione</option>
         <option>Berçário</option>
         <option>Maternal I</option>
         <option>Maternal II</option>
         <option>Pré-escola</option>
+
       </select>
 
       <label>Nome do responsável</label>
-      <input type="text" placeholder="Ex: Ana Paula Silva">
+      <input
+        type="text"
+        id="responsavel"
+        placeholder="Ex: Ana Paula Silva"
+        required
+      >
 
       <label>CPF do responsável</label>
-      <input type="text" placeholder="000.000.000-00">
+      <input
+        type="text"
+        id="cpf"
+        placeholder="000.000.000-00"
+        required
+      >
 
       <label>Contato de emergência</label>
-      <input type="tel" placeholder="(61) 99999-9999">
+      <input
+        type="tel"
+        id="contato"
+        placeholder="(61) 99999-9999"
+        required
+      >
 
       <label>Anexar documento</label>
-      <input type="file">
+      <input
+        type="file"
+        id="documento"
+        accept=".pdf,.jpg,.jpeg,.png"
+      >
 
-      <button type="button">Salvar Cadastro</button>
+      <button type="submit">
+        Salvar Cadastro
+      </button>
+
     </form>
+
   </main>
 
+  <script src="js/cadastro.js"></script>
+
 </body>
+
 </html>

@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Rotina Diária - Creche Doce</title>
+
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
   <aside class="sidebar">
+
     <h2>Creche Doce</h2>
+
     <a href="dashboard.html">Dashboard</a>
     <a href="cadastro.html">Cadastro</a>
     <a href="consulta.html">Consulta</a>
@@ -16,36 +23,82 @@
     <a href="relatorio.html">Relatórios</a>
     <a href="comunicados.html">Comunicados</a>
     <a href="index.html">Sair</a>
+
   </aside>
 
   <main class="content">
-    <h1>Registro Diário das Crianças</h1>
-    <p>Registro de alimentação, fraldas e atividades realizadas.</p>
 
-    <form class="form-box">
+    <h1>Registro Diário das Crianças</h1>
+
+    <p>
+      Registro de alimentação, fraldas e atividades realizadas.
+    </p>
+
+    <form class="form-box" id="rotinaForm">
+
       <label>Aluno</label>
-      <select>
-        <option>Maria Eduarda Silva</option>
-        <option>João Pedro Santos</option>
-        <option>Lucas Almeida</option>
+
+      <select id="aluno" required>
+
+        <option value="">
+          Selecione um aluno
+        </option>
+
       </select>
 
       <label>Tipo de registro</label>
-      <select>
+
+      <select id="tipoRegistro" required>
+
+        <option value="">
+          Selecione
+        </option>
+
         <option>Alimentação</option>
         <option>Troca de fralda</option>
         <option>Atividade realizada</option>
+
       </select>
 
       <label>Descrição</label>
-      <textarea placeholder="Ex: Almoçou tudo, participou da atividade de pintura..."></textarea>
+
+      <textarea
+        id="descricao"
+        placeholder="Ex: Almoçou tudo, participou da atividade de pintura..."
+        required
+      ></textarea>
 
       <label>Observações</label>
-      <textarea placeholder="Observações adicionais"></textarea>
 
-      <button type="button">Registrar Rotina</button>
+      <textarea
+        id="observacoes"
+        placeholder="Observações adicionais"
+      ></textarea>
+
+      <button type="submit">
+        Registrar Rotina
+      </button>
+
     </form>
+
+    <section class="box">
+
+      <h2>Histórico de Registros</h2>
+
+      <ul id="listaRotina">
+
+        <li>
+          Nenhum registro realizado.
+        </li>
+
+      </ul>
+
+    </section>
+
   </main>
 
+  <script src="js/rotina.js"></script>
+
 </body>
+
 </html>

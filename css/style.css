@@ -27,6 +27,7 @@ body {
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
   text-align: center;
+  animation: fadeIn 0.4s ease;
 }
 
 .login-container h1 {
@@ -43,6 +44,8 @@ body {
   text-align: left;
 }
 
+/* FORMULÁRIOS */
+
 label {
   display: block;
   margin-top: 15px;
@@ -50,13 +53,23 @@ label {
   font-weight: bold;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 8px;
   outline: none;
   font-size: 14px;
+  transition: 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #d63384;
+  box-shadow: 0 0 8px rgba(214, 51, 132, 0.3);
 }
 
 textarea {
@@ -74,10 +87,13 @@ button {
   color: white;
   font-size: 16px;
   cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
 }
 
 button:hover {
   background-color: #b82a70;
+  transform: translateY(-2px);
 }
 
 /* MENU */
@@ -105,10 +121,12 @@ button:hover {
   padding: 12px;
   margin-bottom: 8px;
   border-radius: 8px;
+  transition: 0.3s;
 }
 
 .sidebar a:hover {
   background-color: rgba(255,255,255,0.2);
+  padding-left: 18px;
 }
 
 /* CONTEÚDO */
@@ -143,6 +161,12 @@ button:hover {
   padding: 25px;
   border-radius: 14px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: 0.3s;
+  animation: fadeIn 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .card h3 {
@@ -165,6 +189,7 @@ button:hover {
   border-radius: 14px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.08);
   margin-top: 25px;
+  animation: fadeIn 0.4s ease;
 }
 
 .box h2 {
@@ -180,7 +205,7 @@ button:hover {
   margin-bottom: 10px;
 }
 
-/* FORMULÁRIOS */
+/* FORM BOX */
 
 .form-box {
   background-color: white;
@@ -188,7 +213,10 @@ button:hover {
   border-radius: 14px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.08);
   max-width: 700px;
+  animation: fadeIn 0.4s ease;
 }
+
+/* BUSCA */
 
 .search-box {
   display: flex;
@@ -205,9 +233,25 @@ button:hover {
   margin-top: 0;
 }
 
+/* USUÁRIO DASHBOARD */
+
+.usuario-box {
+  background-color: white;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  animation: fadeIn 0.4s ease;
+}
+
+.usuario-box p {
+  margin-bottom: 5px;
+}
+
 /* RESPONSIVO */
 
 @media (max-width: 900px) {
+
   .sidebar {
     position: relative;
     width: 100%;
@@ -221,9 +265,11 @@ button:hover {
   .cards {
     grid-template-columns: repeat(2, 1fr);
   }
+
 }
 
 @media (max-width: 600px) {
+
   .cards {
     grid-template-columns: 1fr;
   }
@@ -239,4 +285,21 @@ button:hover {
   .search-box button {
     width: 100%;
   }
+
+}
+
+/* ANIMAÇÕES */
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
 }

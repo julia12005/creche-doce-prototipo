@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Comunicados - Creche Doce</title>
+
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
   <aside class="sidebar">
+
     <h2>Creche Doce</h2>
+
     <a href="dashboard.html">Dashboard</a>
     <a href="cadastro.html">Cadastro</a>
     <a href="consulta.html">Consulta</a>
@@ -16,38 +23,74 @@
     <a href="relatorio.html">Relatórios</a>
     <a href="comunicados.html">Comunicados</a>
     <a href="index.html">Sair</a>
+
   </aside>
 
   <main class="content">
-    <h1>Envio de Comunicados</h1>
-    <p>Comunicação com os responsáveis dos alunos.</p>
 
-    <form class="form-box">
+    <h1>Envio de Comunicados</h1>
+
+    <p>
+      Comunicação com os responsáveis dos alunos.
+    </p>
+
+    <form class="form-box" id="comunicadoForm">
+
       <label>Destinatário</label>
-      <select>
+
+      <select id="destinatario" required>
+
+        <option value="">
+          Selecione
+        </option>
+
         <option>Responsável específico</option>
         <option>Turma inteira</option>
         <option>Todos os responsáveis</option>
+
       </select>
 
       <label>Assunto</label>
-      <input type="text" placeholder="Ex: Reunião de pais">
+
+      <input
+        type="text"
+        id="assunto"
+        placeholder="Ex: Reunião de pais"
+        required
+      >
 
       <label>Mensagem</label>
-      <textarea placeholder="Digite o comunicado..."></textarea>
 
-      <button type="button">Enviar Comunicado</button>
+      <textarea
+        id="mensagem"
+        placeholder="Digite o comunicado..."
+        required
+      ></textarea>
+
+      <button type="submit">
+        Enviar Comunicado
+      </button>
+
     </form>
 
     <section class="box">
+
       <h2>Histórico de Comunicados</h2>
-      <ul>
-        <li>Reunião de pais - enviado para Maternal II</li>
-        <li>Aviso de feriado - enviado para todos</li>
-        <li>Solicitação de documentos - enviado para responsável específico</li>
+
+      <ul id="listaComunicados">
+
+        <li>
+          Nenhum comunicado enviado.
+        </li>
+
       </ul>
+
     </section>
+
   </main>
 
+  <script src="js/comunicados.js"></script>
+
 </body>
+
 </html>
