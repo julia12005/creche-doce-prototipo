@@ -33,7 +33,7 @@ function carregarAlunos() {
 
 carregarAlunos();
 
-// Carrega relatórios
+// Carrega histórico de relatórios
 function carregarRelatorios() {
 
     listaRelatorios.innerHTML = "";
@@ -60,6 +60,12 @@ function carregarRelatorios() {
                 <br>
                 Relatório gerado em:
                 ${relatorio.data}
+                <br><br>
+
+                <button
+                    onclick="visualizarRelatorio('${relatorio.data}')">
+                    Visualizar Relatório
+                </button>
             `;
 
             listaRelatorios.appendChild(li);
@@ -69,6 +75,41 @@ function carregarRelatorios() {
 }
 
 carregarRelatorios();
+
+// Visualizar relatório completo
+function visualizarRelatorio(data) {
+
+    const relatorio =
+        relatorios.find(r => r.data === data);
+
+    if (!relatorio) return;
+
+    alert(
+`ALUNO: ${relatorio.aluno}
+
+DESENVOLVIMENTO COGNITIVO:
+${relatorio.cognitivo}
+
+DESENVOLVIMENTO MOTOR:
+${relatorio.motor}
+
+DESENVOLVIMENTO EMOCIONAL:
+${relatorio.emocional}
+
+DESENVOLVIMENTO SOCIAL:
+${relatorio.social}
+
+OBSERVAÇÕES:
+${relatorio.observacoes || "Nenhuma"}
+
+PROFESSORA RESPONSÁVEL:
+${relatorio.professora}
+
+DATA:
+${relatorio.data}`
+    );
+
+}
 
 // Gera relatório
 form.addEventListener("submit", function(event) {
@@ -93,7 +134,6 @@ form.addEventListener("submit", function(event) {
     const observacoes =
         document.getElementById("observacoes").value.trim();
 
-    // Validação
     if (
         aluno === "" ||
         cognitivo === "" ||
@@ -108,11 +148,9 @@ form.addEventListener("submit", function(event) {
 
     }
 
-    // Usuário logado
     const usuario =
         JSON.parse(localStorage.getItem("usuarioLogado"));
 
-    // Cria objeto relatório
     const novoRelatorio = {
 
         aluno,
@@ -123,14 +161,15 @@ form.addEventListener("submit", function(event) {
         observacoes,
 
         professora:
-            usuario ? usuario.email : "Não identificado",
+            usuario
+                ? usuario.email
+                : "Não identificado",
 
         data:
             new Date().toLocaleString("pt-BR")
 
     };
 
-    // Salva
     relatorios.push(novoRelatorio);
 
     localStorage.setItem(
@@ -140,10 +179,8 @@ form.addEventListener("submit", function(event) {
 
     alert("Relatório gerado com sucesso!");
 
-    // Atualiza lista
     carregarRelatorios();
 
-    // Limpa formulário
     form.reset();
 
 });
